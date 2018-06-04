@@ -1,0 +1,32 @@
+@import "../../../styles.scss";
+
+.card-detail {
+
+    &__head {
+        display: flex;
+        align-items: center;
+    }
+
+    &__btn-head {
+        margin-left: auto;
+    }
+
+    &__status {
+        margin: 5px 0 0 20px;
+        color: #666;
+    }
+
+    select {
+        border-radius: 3px;
+        height: 30px;
+        background: $purple;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 0 0 0 10px;
+        width: 130px;
+        text-transform: uppercase;
+        outline: none;
+        margin: 0 0 0 10px;
+    }
+}

@@ -1,0 +1,42 @@
+<div class="container card-detail" *ngIf="!editor">
+  <div class="card-detail__head">
+    <h1>{{card?.title}}</h1> 
+    <span class="card-detail__status" *ngIf="card" (change)="changeStatus($event, card.id)">
+      status
+      <select [(ngModel)]="card.status">
+        <option value="new">New</option>
+        <option value="progress">In Progress</option>
+        <option value="qa">QA</option>
+        <option value="reject">Reject</option>
+        <option value="done">Done</option>
+      </select>
+    </span>
+    <a class="card-detail__btn-head btn-outline" (click)="showEditor(card)">Edit</a>
+  </div>
+  
+  
+  <div [innerHTML]="card?.description"></div>
+
+  <a class="btn" (click)="onBack()">Back</a>
+</div>
+
+<div class="container card-detail" *ngIf="editor">
+  <h1>Edit</h1>
+  
+  <form class="form" [formGroup]="formEditTask" (ngSubmit)="onUpdateTask(card.id, formEditTask)">
+
+    <div class="form__field">
+      <input formControlName="title" type="text" placeholder="Title task" class="form__input">
+    </div>
+    
+    <div class="form__field">
+      <textarea formControlName="description" placeholder="Description Task" class="form__textarea"></textarea>
+    </div>
+
+    <div class="form__field">
+      <button class="btn" [disabled]="formEditTask.invalid" >Save</button>
+      <button class="btn-outline" (click)="showEditor(card)">Cancel</button>
+    </div>
+    
+  </form>
+</div>

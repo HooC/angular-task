@@ -1,0 +1,26 @@
+<div class="grid-container">
+  <div class="grid-container__item">
+    <h3 class="grid-container__title">New</h3>
+    <app-card-dashboard [cards]="getTasksCategory('new')"></app-card-dashboard>
+  </div>
+
+  <div class="grid-container__item">
+    <h3 class="grid-container__title">In Progress</h3>
+    <app-card-dashboard [cards]="getTasksCategory('progress')"></app-card-dashboard>
+  </div>
+  
+  <div class="grid-container__item">
+    <h3 class="grid-container__title">QA</h3>
+    <app-card-dashboard [cards]="getTasksCategory('qa')"></app-card-dashboard>
+  </div>
+
+  <div class="grid-container__item">
+    <h3 class="grid-container__title">Reject</h3>
+    <app-card-dashboard [cards]="getTasksCategory('reject')"></app-card-dashboard>
+  </div>
+  
+  <div class="grid-container__item">
+    <h3 class="grid-container__title">Done</h3>
+    <app-card-dashboard [cards]="getTasksCategory('done')"></app-card-dashboard>
+  </div>
+</div>

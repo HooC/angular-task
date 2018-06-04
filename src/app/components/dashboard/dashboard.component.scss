@@ -1,0 +1,23 @@
+@import "../../../styles.scss";
+
+.grid-container {
+    display: flex;
+    height: calc(100% - 61px);
+    
+    &__item {
+        flex: 0 0 20%;
+        border-right: 1px solid #ccc;
+        box-sizing: border-box;
+        padding: 0 15px;
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    &__title {
+        text-align: center;
+        border-bottom: 1px solid $blue;
+        padding: 0 0 1em;
+    }
+}

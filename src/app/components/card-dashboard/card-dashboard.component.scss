@@ -1,0 +1,69 @@
+@import "../../../styles.scss";
+
+.card {
+    border: 1px solid #eee;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: #eee;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        transform: rotate(45deg);
+    }
+
+    &.progress {
+        &:before {
+            background: $purple;
+        }
+    }
+
+    &.qa {
+        &:before {
+            background: $blue;
+        }
+    }
+
+    &.reject {
+        &:before {
+            background: $pink;
+        }
+    }
+    
+    &.done {
+        &:before {
+            background: $green;
+        }
+    }
+
+    &__title {
+        margin-top: 0;
+    }
+
+    &__desc {
+        color: #555;
+        max-height: 73px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        p {
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__btn {
+        .btn-outline {
+            margin: 0 10px 0 0;
+        }
+    }
+}

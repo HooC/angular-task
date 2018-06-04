@@ -1,0 +1,24 @@
+@import "../../../styles.scss";
+
+.header {
+    height: 60px;
+    background: $blue;
+    
+    text-align: center;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    
+    &__title {
+        font-size: 32px;
+        line-height: 58px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+    &__btn {
+        margin-left: auto;
+    }
+}

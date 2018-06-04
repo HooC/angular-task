@@ -9,21 +9,13 @@
 			"id": "title",
 			"order": 0
 		},
-		"date": {
-			"name": "date",
-			"type": "date",
-			"typeLabel": "date",
-			"required": false,
-			"id": "date",
-			"order": 1
-		},
 		"description": {
 			"name": "description",
 			"type": "string",
 			"typeLabel": "string",
 			"required": true,
 			"id": "description",
-			"order": 2
+			"order": 1
 		},
 		"status": {
 			"name": "status",
@@ -31,7 +23,7 @@
 			"typeLabel": "string",
 			"required": true,
 			"id": "status",
-			"order": 3
+			"order": 2
 		}
 	}
 }

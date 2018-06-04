@@ -1,0 +1,8 @@
+<div *ngFor="let i of cards" class="card" [(ngClass)]="i.status">
+    <h3 class="card__title">{{i.title}}</h3>
+    <div class="card__desc" [innerHTML]="i.description"></div>
+    <div class="card__btn">
+      <a routerLink="task/{{i.id}}" class="btn-outline">More</a>
+      <a class="btn-outline" (click)="deleteTask(i)">Delete</a>
+    </div>
+</div>

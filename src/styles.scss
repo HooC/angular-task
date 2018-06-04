@@ -1,1 +1,119 @@
 /* You can add global styles to this file, and also import other style files */
+$pink: #e7759a;
+$orange:#FFA35F;
+$blue: #755DA3;
+$purple:  #BA78CD;
+$green: #66bb6a;
+
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: 'Roboto Slab', serif;
+    color: #333;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 20px;
+    color: white;
+    background: $orange;
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: none;
+    border: none;
+
+    &:hover {
+        background: #ff9800;
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+        background: #ccc;
+
+        &:hover {
+            background: #ccc;
+        }
+    }
+}
+
+.btn-outline {
+    @extend .btn;
+    background: none;
+    border: 1px solid #ccc;
+    color: #333;
+    
+    &:hover {
+        background: #eee;
+    }
+
+    &_wh {
+        color: white;
+
+        &:hover {
+            background: white;
+            border-color: $blue;
+            color: $blue;
+        }
+    }
+}
+
+.container {
+    max-width: 1170px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.form {
+    margin: 40px 0 0 0;
+
+    &__field {
+        margin: 0 0 30px;
+
+        .btn {
+            margin: 0 20px 0 0;
+            height: 40px;
+            padding: 0 35px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        height: 40px;
+        padding: 0 0 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        outline: none;
+
+        &:focus {
+            border-color: $purple;
+        }
+
+        &.ng-invalid.ng-touched {
+            border-color: $orange;
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 240px;
+        padding: 10px 0 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        outline: none;
+        
+        &:focus {
+            border-color: $purple;
+        }
+
+        &.ng-invalid.ng-touched {
+            border-color: $orange;
+        }
+    }
+}
