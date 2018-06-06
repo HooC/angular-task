@@ -13,6 +13,9 @@ import { routes } from './routes';
 import { CardDetailsComponent } from './components/card-details/card-details.component';
 import { CreateNewTaskComponent } from './components/create-new-task/create-new-task.component';
 import { TasksService } from './services/tasks.service';
+import { AuthComponent } from './components/auth/auth.component';
+import { UsersService } from './services/users.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { TasksService } from './services/tasks.service';
     HeaderComponent,
     CardDashboardComponent,
     CardDetailsComponent,
-    CreateNewTaskComponent
+    CreateNewTaskComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { TasksService } from './services/tasks.service';
     RouterModule.forRoot(routes)
   ],
   providers: [
-    TasksService
+    TasksService,
+    UsersService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

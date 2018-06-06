@@ -30,7 +30,7 @@ export class CardDetailsComponent implements OnInit {
   }
 
   onBack() {
-    this.route.navigate(['']);
+    this.route.navigate(['dashboard']);
   }
 
   showEditor(card) {

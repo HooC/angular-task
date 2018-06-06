@@ -33,7 +33,7 @@ export class CreateNewTaskComponent implements OnInit {
       description: this.formNewTask.value.description,
       status: 'new'
     }).subscribe(response => {
-      this.router.navigate(['']);
+      this.router.navigate(['dashboard']);
     });
   }
 }
