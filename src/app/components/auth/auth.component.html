@@ -1,6 +1,8 @@
 <div class="container">
   <h1>Log In</h1>
 
+  <p>Don't have an account? <a routerLink="/registration">Registration</a></p>
+  
   <form class="form" [formGroup]="loginForm" novalidate (ngSubmit)="onSubmitLogin(loginForm)">
     <div class="form__field">
       <input type="text" class="form__input" placeholder="Name"

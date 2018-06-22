@@ -29,4 +29,16 @@
         outline: none;
         margin: 0 0 0 10px;
     }
+
+    &__tags {
+        margin: 0 0 20px;
+    }
+
+    &__tag-item {
+        margin: 0 10px 0 0;
+    }
+
+    &__content {
+        margin: 0 0 30px;
+    }
 }

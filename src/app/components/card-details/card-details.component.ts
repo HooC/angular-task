@@ -11,6 +11,7 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 export class CardDetailsComponent implements OnInit {
 
   card;
+  tags: String[] = [];
   editor = false;
   formEditTask;
 
@@ -21,7 +22,10 @@ export class CardDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.service.getElement(this.activatedRoute.snapshot.params.id)
-    .subscribe(response => this.card = response);
+    .subscribe(response => {
+      this.card = response;
+      this.tags = response['tags'];
+    });
 
     this.formEditTask = this.fb.group({
       title: ['', [Validators.required]],
@@ -42,6 +46,7 @@ export class CardDetailsComponent implements OnInit {
   onUpdateTask (id, formEditTask) {
     this.service.updateTask(id, {
       title: formEditTask.value.title,
+      tags: this.tags,
       description: formEditTask.value.description
     }).subscribe();
 
@@ -52,5 +57,9 @@ export class CardDetailsComponent implements OnInit {
     this.service.updateTask(id, {
       status: e.target.value
     }).subscribe();
+  }
+
+  onChange(newTags) {
+    this.tags = [...newTags];
   }
 }

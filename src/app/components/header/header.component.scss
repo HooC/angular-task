@@ -16,9 +16,10 @@
         font-weight: bold;
         color: white;
         text-decoration: none;
+        flex-grow: 1;
     }
 
     &__btn {
-        margin-left: auto;
+        // margin-left: auto;
     }
 }

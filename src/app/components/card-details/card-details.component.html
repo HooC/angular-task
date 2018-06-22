@@ -13,9 +13,12 @@
     </span>
     <a class="card-detail__btn-head btn-outline" (click)="showEditor(card)">Edit</a>
   </div>
+
+  <div class="card-detail__tags">
+    <span class="card-detail__tag-item" *ngFor="let i of tags"><a href="">#{{i}}</a>&nbsp;</span>
+  </div>
   
-  
-  <div [innerHTML]="card?.description"></div>
+  <div class="card-detail__content" [innerHTML]="card?.description"></div>
 
   <a class="btn" (click)="onBack()">Back</a>
 </div>
@@ -28,6 +31,8 @@
     <div class="form__field">
       <input formControlName="title" type="text" placeholder="Title task" class="form__input">
     </div>
+
+    <app-tags [tags]="tags" (onChange)="onChange($event)"></app-tags>
     
     <div class="form__field">
       <textarea formControlName="description" placeholder="Description Task" class="form__textarea"></textarea>

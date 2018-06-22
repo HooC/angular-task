@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   tasks;
 
   constructor(private tasksService: TasksService,
-              private activatedRoute: ActivatedRoute) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getTasks();

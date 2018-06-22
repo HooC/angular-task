@@ -16,6 +16,9 @@ import { TasksService } from './services/tasks.service';
 import { AuthComponent } from './components/auth/auth.component';
 import { UsersService } from './services/users.service';
 import { AuthGuard } from './auth.guard';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { UserComponent } from './components/user/user.component';
+import { TagsComponent } from './components/tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { AuthGuard } from './auth.guard';
     CardDashboardComponent,
     CardDetailsComponent,
     CreateNewTaskComponent,
-    AuthComponent
+    AuthComponent,
+    RegistrationComponent,
+    UserComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,

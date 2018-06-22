@@ -32,8 +32,13 @@ export class CreateNewTaskComponent implements OnInit {
       title: this.formNewTask.value.title,
       description: this.formNewTask.value.description,
       status: 'new'
-    }).subscribe(response => {
+    }).subscribe(_ => {
       this.router.navigate(['dashboard']);
     });
+  }
+
+  onCancelForm(e) {
+    this.formNewTask.patchValue({title: '', description: ''});
+    e.preventDefault();
   }
 }

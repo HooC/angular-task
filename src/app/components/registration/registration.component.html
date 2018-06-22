@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Registration new account</h1>
+
+  <form novalidate class="form" [formGroup]="regForm" (ngSubmit)="onSubmit(regForm)">
+    <div class="form__field">
+      <input formControlName="name" type="text" class="form__input" placeholder="Name">
+    </div>
+    <div class="form__field">
+      <input formControlName="email" type="email" class="form__input" placeholder="Email">
+    </div>
+    <div formGroupName="passwordGroup">
+      <div class="form__field">
+        <input formControlName="password" type="password" class="form__input" placeholder="Password">
+      </div>
+      <div class="form__field">
+        <input formControlName="cfpassword" type="password" class="form__input" placeholder="Confirm Password">
+      </div>
+    </div>
+    <div class="form__field">
+      <button class="btn" [disabled]="regForm.invalid">Send</button>
+      <button class="btn-outline" (click)="clearForm($event)">Cancel</button>
+    </div>
+  </form>
+</div>
