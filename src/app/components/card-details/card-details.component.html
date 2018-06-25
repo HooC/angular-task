@@ -15,7 +15,7 @@
   </div>
 
   <div class="card-detail__tags">
-    <span class="card-detail__tag-item" *ngFor="let i of tags"><a href="">#{{i}}</a>&nbsp;</span>
+    <span class="card-detail__tag-item" *ngFor="let i of card?.tags"><a href="javascript:void(0)">#{{i}}</a>&nbsp;</span> 
   </div>
   
   <div class="card-detail__content" [innerHTML]="card?.description"></div>
@@ -32,7 +32,7 @@
       <input formControlName="title" type="text" placeholder="Title task" class="form__input">
     </div>
 
-    <app-tags [tags]="tags" (onChange)="onChange($event)"></app-tags>
+    <app-tags [tags]="tags" (change)="onChange($event)"></app-tags>
     
     <div class="form__field">
       <textarea formControlName="description" placeholder="Description Task" class="form__textarea"></textarea>
@@ -40,7 +40,7 @@
 
     <div class="form__field">
       <button class="btn" [disabled]="formEditTask.invalid" >Save</button>
-      <button class="btn-outline" (click)="showEditor(card)">Cancel</button>
+      <button class="btn-outline" (click)="cancelEditor($event)">Cancel</button>
     </div>
     
   </form>

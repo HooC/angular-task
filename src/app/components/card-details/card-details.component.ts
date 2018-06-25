@@ -24,7 +24,7 @@ export class CardDetailsComponent implements OnInit {
     this.service.getElement(this.activatedRoute.snapshot.params.id)
     .subscribe(response => {
       this.card = response;
-      this.tags = response['tags'];
+      this.tags = [].concat(response['tags']);
     });
 
     this.formEditTask = this.fb.group({
@@ -43,12 +43,17 @@ export class CardDetailsComponent implements OnInit {
     this.formEditTask.patchValue(card);
   }
 
+  cancelEditor(e) {
+    e.preventDefault();
+    this.editor = !this.editor;
+  }
+
   onUpdateTask (id, formEditTask) {
     this.service.updateTask(id, {
       title: formEditTask.value.title,
       tags: this.tags,
       description: formEditTask.value.description
-    }).subscribe();
+    }).subscribe(response => this.card = response );
 
     this.showEditor(Object.assign(this.card, formEditTask.value));
   }
@@ -60,6 +65,10 @@ export class CardDetailsComponent implements OnInit {
   }
 
   onChange(newTags) {
-    this.tags = [...newTags];
+    if  (Array.isArray(newTags)) {
+      this.tags = newTags;
+    }
+
+    console.log(this.tags, this.card.tags);
   }
 }
